@@ -1,11 +1,11 @@
 import urllib2
+import re
 
 # retrieves a word to play with from a random word API
 def get_word():
     print "...Getting your word..."
     response = urllib2.urlopen("http://randomword.setgetgo.com/get.php")
     word = response.read().strip()
-    print word #debug 
     return word
 
 def get_guess():
@@ -13,8 +13,12 @@ def get_guess():
     guess = guess.strip().lower()
     return guess
 
-def check_guess(past_guesses):
-    return
+def valid_guess(current_guess):
+    
+
+    return True
+    else:
+        return False
 
 def update_guess(current_guess, word_parts, past_guesses):
     updated = []
