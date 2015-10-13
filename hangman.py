@@ -14,11 +14,12 @@ def get_guess():
     return guess
 
 def valid_guess(current_guess):
-    
-
-    return True
-    else:
+    if(len(current_guess) != 1):
         return False
+    elif(current_guess not in 'abcdefghijklmnopqrstuvwxyz'):
+        return False
+    else:
+        return True
 
 def update_guess(current_guess, word_parts, past_guesses):
     updated = []
@@ -78,6 +79,11 @@ while True:
 
     # ask for guess
     current_guess = get_guess()
+
+    #validate guess
+    if not valid_guess(current_guess):
+        print "Invalid guess"
+        continue
 
     # if letter has already been guessed, prompt user
     if current_guess not in past_guesses:
