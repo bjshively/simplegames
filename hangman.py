@@ -1,5 +1,4 @@
 import urllib2
-import re
 
 # retrieves a word to play with from a random word API
 def get_word():
@@ -14,14 +13,14 @@ def get_guess():
     return guess
 
 def valid_guess(current_guess):
-    if(len(current_guess) != 1):
+    if len(current_guess) != 1:
         return False
-    elif(current_guess not in 'abcdefghijklmnopqrstuvwxyz'):
+    elif current_guess not in 'abcdefghijklmnopqrstuvwxyz':
         return False
     else:
         return True
 
-def update_guess(current_guess, word_parts, past_guesses):
+def update_guess(word_parts, past_guesses):
     updated = []
     for l in word_parts:
         if l in past_guesses:
@@ -82,7 +81,7 @@ while True:
 
     #validate guess
     if not valid_guess(current_guess):
-        print "Invalid guess"
+        print "Invalid guess -  try again."
         continue
 
     # if letter has already been guessed, prompt user
@@ -95,7 +94,7 @@ while True:
     # if guess is right, update output
     if current_guess in word_parts:
         print "Good guess! " + current_guess + " is in the word."
-        guess_word = update_guess(current_guess, word_parts, past_guesses)
+        guess_word = update_guess(word_parts, past_guesses)
         continue
 
     # if guess is wrong, update drawing and incorrect guess list
