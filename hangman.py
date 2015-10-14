@@ -30,12 +30,7 @@ def update_guess(word_parts, past_guesses):
     return updated
 
 def render_guess(guess):
-    # makes pretty formatted guess string for printing
-    val = ""
-    for l in guess:
-        val = val + l + " "
-    val = val.strip()
-    return val
+    return " ".join(guess)
 
 if __name__ == '__main__':
     # setup game
