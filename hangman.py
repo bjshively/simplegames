@@ -42,7 +42,7 @@ def render_guess(guess):
     """Create a printable guess string"""
     return " ".join(guess)
 
-if __name__ == '__main__':
+def main():
     # setup game
     miss_count = 0
     miss_limit = 5
@@ -103,3 +103,6 @@ if __name__ == '__main__':
         else:
             miss_count += 1
             print "Sorry! " + current_guess + " is not part of the word."
+
+if __name__ == "__main__":
+    main()
