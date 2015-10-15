@@ -5,7 +5,6 @@ A simple hangman game.
 
 import urllib2
 
-# retrieves a word to play with from a random word API
 def get_word():
     """Get a word from the Random Word API"""
     print "...Getting your word..."
